@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -40,10 +41,14 @@ public class ToileController implements Initializable {
     private TextField dateField;
 
     @FXML
-    private TextField populationField;
+    private GridPane GPane;
 
     @FXML
+    private Pane toile;
+    @FXML
     private Button addButton;
+
+
 
     @FXML
     private BarChart<String, Number> barChart;
@@ -51,16 +56,12 @@ public class ToileController implements Initializable {
     @FXML
     private NumberAxis yAxis;
 
+
     private Circle comp1;
-
     private Circle comp2;
-
     private Circle comp3;
-
     private Circle comp4;
-
     private Circle comp5;
-
     private Circle comp6;
 
     @Override
@@ -77,12 +78,21 @@ public class ToileController implements Initializable {
                 *  (value / noteMaximale));
     }
 
+    @FXML
     public void ajoutPoint() {
-    
-    Button c1 = new Button();
-
-
+    for (Node node : GPane.getChildren()){
+        if(node instanceof TextField){
+            TextField textField = (TextField) node;
+                double value = double;
+                if(value >= 0 && value <= 20 ){
+                    Circle newpoint = new Circle(
+                            getXRadarChart(value, Integer.parseInt(textField.getId())),
+                            getYRadarChart(value, Integer.parseInt(textField.getId()));
+                }
+            }
+        }
+    }
 
     }
 
-}
+
