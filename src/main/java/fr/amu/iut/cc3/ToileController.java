@@ -11,12 +11,17 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
 import java.net.URL;
@@ -31,6 +36,32 @@ public class ToileController implements Initializable {
     private static int angleDepart = 90;
     private static int noteMaximale = 20;
 
+    @FXML
+    private TextField dateField;
+
+    @FXML
+    private TextField populationField;
+
+    @FXML
+    private Button addButton;
+
+    @FXML
+    private BarChart<String, Number> barChart;
+
+    @FXML
+    private NumberAxis yAxis;
+
+    private Circle comp1;
+
+    private Circle comp2;
+
+    private Circle comp3;
+
+    private Circle comp4;
+
+    private Circle comp5;
+
+    private Circle comp6;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -44,6 +75,14 @@ public class ToileController implements Initializable {
     int getYRadarChart(double value, int axe ){
         return (int) (rayonCercleExterieur - Math.sin(Math.toRadians(angleDepart - (axe-1)  * angleEnDegre)) * rayonCercleExterieur
                 *  (value / noteMaximale));
+    }
+
+    public void ajoutPoint() {
+    
+    Button c1 = new Button();
+
+
+
     }
 
 }
